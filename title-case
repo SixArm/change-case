@@ -1,2 +1,23 @@
-perl -pe 's/(\w\S*)/\u\L$1/g'
+#!/bin/sh
+#
+# title-case: change the case of each word to use title format.
+#
+# Examples:
+#
+#   ```shell
+#   $ echo "foo goo hoo" | title-case
+#   Foo Goo Hoo
+#
+#   $ echo "foo_goo_hoo" | dash-case
+#   Foo Goo Hoo
+#   ```
+#
+# The script does this:
+#
+#   * Insert a dash character between any lower case character
+#     followed by an upper case character.
+#
+#   * Translate any underscore character to a space character.
+#
+perl -pe 's/(\w\S*)/\u\L$1/g; s/_/ /g'
 

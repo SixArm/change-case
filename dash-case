@@ -1,1 +1,24 @@
-perl -pe 's/([a-z0-9])([A-Z])/$1-\L$2/g'
+#!/bin/sh
+#
+# dash-case: change the case of each word to use dash format.
+#
+# Examples:
+#
+#   ```shell
+#   $ echo "FooGooHoo" | dash-case
+#   foo-goo-hoo
+#
+#   $ echo "foo_goo_hoo" | dash-case
+#   foo-goo-hoo
+#   ```
+#
+# The script does this:
+#
+#   * Insert a dash character between any lower case character
+#     followed by an upper case character.
+#
+#   * Translate any underscore character to a dash character.
+#
+#   * Change case to lower case.
+#
+perl -pe 's/([a-z0-9])([A-Z])/$1-$2/g; s/_/-/g; $_=lc($_)'
