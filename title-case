@@ -8,16 +8,11 @@
 #   $ echo "foo goo hoo" | title-case
 #   Foo Goo Hoo
 #
-#   $ echo "foo_goo_hoo" | dash-case
-#   Foo Goo Hoo
-#   ```
-#
 # The script does this:
 #
-#   * Insert a dash character between any lower case character
-#     followed by an upper case character.
+#   * Convert the first letter of each word to upper-case.
 #
-#   * Translate any underscore character to a space character.
+#   * A word is defined by the perl `\w` regexp.
 #
-perl -pe 's/(\w\S*)/\u\L$1/g; s/_/ /g'
+perl -pe 's/(\w)(\w*)/$1\u\L$2/g'
 
