@@ -20,7 +20,7 @@ Example:
   $ echo "fooBar" | snake-case
   foo_bar
 
-  $ echo "fooBar" | dash-case
+  $ echo "fooBar" | chain-case
   foo-bar
   ```
  

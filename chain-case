@@ -1,14 +1,14 @@
 #!/bin/sh
 #
-# dash-case: change the case of each word to use dash format.
+# chain-case: change the case of each word to use chain format.
 #
 # Examples:
 #
 #   ```shell
-#   $ echo "FooGooHoo" | dash-case
+#   $ echo "FooGooHoo" | chain-case
 #   foo-goo-hoo
 #
-#   $ echo "foo_goo_hoo" | dash-case
+#   $ echo "foo_goo_hoo" | chain-case
 #   foo-goo-hoo
 #   ```
 #
