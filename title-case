@@ -12,7 +12,9 @@
 #
 #   * Convert the first letter of each word to upper-case.
 #
+#   * Convert all other letters to lower-case.
+#
 #   * A word is defined by the perl `\w` regexp.
 #
-perl -pe 's/(\w)(\w*)/$1\u\L$2/g'
+perl -pe 's/(\w)(\w*)/\U\1\L\2/g'
 
