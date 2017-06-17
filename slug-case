@@ -5,14 +5,19 @@
 # Examples:
 #
 #   ```shell
-#   $ echo "FooGooHoo" | chain-case
+#   $ echo "FooGooHoo" | slug-case
 #   foogoohoo
 #
-#   $ echo "foo_goo_hoo" | chain-case
+#   $ echo "foo_goo_hoo" | slug-case
 #   foo-goo-hoo
+#
+#   $ echo "can't stop won't stop" | slug-case
+#   cant-stop-wont-stop
 #   ```
 #
 # The script does this:
+#
+#   * Delete any contraction quote a.k.a. apostrophe.
 #
 #   * Translate any non-alphanumeric to a dash.
 #
@@ -20,4 +25,4 @@
 #
 #   * Change case to lower case.
 #
-perl -pe 's/[^[:alnum:]]/-/g; s/--+/-/g; $_=lc($_)'
+perl -pe "s/['’]//g; s/[^[:alnum:]]/-/g; s/--+/-/g; \$_=lc(\$_)"
