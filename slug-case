@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# slug-case: change the case of each word to use slug format.
+#
+# Examples:
+#
+#   ```shell
+#   $ echo "FooGooHoo" | chain-case
+#   foogoohoo
+#
+#   $ echo "foo_goo_hoo" | chain-case
+#   foo-goo-hoo
+#   ```
+#
+# The script does this:
+#
+#   * Translate any non-alphanumeric to a dash.
+#
+#   * Ensure only one dash in a row.
+#
+#   * Change case to lower case.
+#
+perl -pe 's/[^[:alnum:]]/-/g; s/--+/-/g; $_=lc($_)'

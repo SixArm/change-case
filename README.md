@@ -22,6 +22,9 @@ Example:
 
   $ echo "fooBar" | chain-case
   foo-bar
+
+  $ echo "fooBar Baz" | slug-case
+  foobar-baz
   ```
  
 ## Implementation
@@ -36,7 +39,7 @@ These scripts are not intended to handle examples such as a title using upper-ca
 ## Tracking
 
 * Package: change-case
-* Version: 1.0.0
+* Version: 1.1.0
 * Created: 2017-05-16
 * Updated: 2017-05-16
 * License: GPL
