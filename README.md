@@ -23,8 +23,8 @@ Example:
   $ echo "fooBar" | chain-case
   foo-bar
 
-  $ echo "fooBar Baz" | slug-case
-  foobar-baz
+  $ echo "I'm We're They're" | slug-case
+  im-were-their
   ```
  
 ## Implementation
@@ -41,7 +41,7 @@ These scripts are not intended to handle examples such as a title using upper-ca
 * Package: change-case
 * Version: 1.1.0
 * Created: 2017-05-16
-* Updated: 2017-05-16
+* Updated: 2017-07-16
 * License: GPL
 * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 
