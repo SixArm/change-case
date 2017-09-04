@@ -22,7 +22,9 @@
 #   * Translate any non-alphanumeric to a dash.
 #
 #   * Ensure only one dash in a row.
+# 
+#   * Trim any leading/trailing dash.
 #
 #   * Change case to lower case.
 #
-perl -pe "s/['’]//g; s/[^[:alnum:]]/-/g; s/--+/-/g; \$_=lc(\$_)"
+perl -pe "s/['’]//g; s/[^[:alnum:]]/-/g; s/--+/-/g; s/^-+//; s/-+$//; \$_=lc(\$_)"
