@@ -2,7 +2,24 @@
 
 Change the case of text on the command line.
 
-Example:
+Contents:
+
+* [](#)
+
+Files:
+
+  * [upper-case](bin/upper-case)
+  * [lower-case](bin/lower-case)
+  * [title-case](bin/title-case)
+  * [camel-case](bin/camel-case)
+  * [snake-case](bin/snake-case)
+  * [chain-case](bin/chain-case)
+  * [slug-case](bin/slug-case)
+
+
+## Examples
+
+Examples of each command:
 
   ```shell
   $ echo "foo BAR" | upper-case
@@ -39,7 +56,7 @@ These scripts are not intended to handle examples such as a title using upper-ca
 ## Tracking
 
 * Package: change-case
-* Version: 1.1.0
+* Version: 2.0.0
 * Created: 2017-05-16
 * Updated: 2017-07-16
 * License: GPL
