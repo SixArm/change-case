@@ -4,9 +4,15 @@ Change the case of text on the command line.
 
 Contents:
 
-* [](#)
+* [Commands](#commands)
+* [Examples](#examples)
+* [Implementation](#implementation)
+* [Tracking](#tracking)
 
-Files:
+
+## Commands
+
+Commands in this repo:
 
   * [upper-case](bin/upper-case)
   * [lower-case](bin/lower-case)
@@ -56,9 +62,9 @@ These scripts are not intended to handle examples such as a title using upper-ca
 ## Tracking
 
 * Package: change-case
-* Version: 2.0.0
+* Version: 2.0.1
 * Created: 2017-05-16
-* Updated: 2017-07-16
+* Updated: 2018-02-27
 * License: GPL
 * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 
