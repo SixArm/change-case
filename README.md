@@ -19,6 +19,7 @@ Commands in this repo:
   * [title-case](bin/title-case)
   * [camel-case](bin/camel-case)
   * [snake-case](bin/snake-case)
+  * [token-case](bin/token-case)
   * [chain-case](bin/chain-case)
   * [slug-case](bin/slug-case)
 
