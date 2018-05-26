@@ -1,2 +1,22 @@
+#!/bin/sh
+#
+# camel-case: change the case of each word to use camel format.
+#
+# Examples:
+#
+#     $ echo "foo-goo-hoo" | camel-case
+#     FooGooHoo
+#
+#     $ echo "foo_goo_hoo" | camel-case
+#     FooGooHoo
+#
+# The script does this:
+#
+#   * A separator is one or more dashes and/or underscores.
+#
+#   * Find each separator.
+#
+#   * Convert the character after the separator to upper-case.
+#
 perl -pe 's/(.)[_-]+(.)/$1\U$2/g'
 

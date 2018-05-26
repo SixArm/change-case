@@ -2,11 +2,10 @@
 #
 # title-case: change the case of each word to use title format.
 #
-# Examples:
+# Example:
 #
-#   ```shell
-#   $ echo "foo goo hoo" | title-case
-#   Foo Goo Hoo
+#     $ echo "foo goo hoo" | title-case
+#     Foo Goo Hoo
 #
 # The script does this:
 #

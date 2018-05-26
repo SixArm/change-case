@@ -19,8 +19,8 @@ Commands in this repo:
   * [title-case](bin/title-case)
   * [camel-case](bin/camel-case)
   * [snake-case](bin/snake-case)
-  * [token-case](bin/token-case)
   * [chain-case](bin/chain-case)
+  * [token-case](bin/token-case)
   * [slug-case](bin/slug-case)
 
 
@@ -41,15 +41,19 @@ Examples of each command:
   $ echo "foo-bar" | camel-case
   fooBar
 
-  $ echo "fooBar" | snake-case
-  foo_bar
+  $ echo "fooBar gooCar" | snake-case
+  foo_bar goo_car
 
   $ echo "fooBar" | chain-case
   foo-bar
 
-  $ echo "I'm We're They're" | slug-case
-  im-were-their
+  $ echo "Can't Stop Won't Stop" | token-case
+  cant_stop_wont_stop
+  
+  $ echo "Can't Stop Won't Stop" | slug-case
+  cant-stop-wont-stop
   ```
+
  
 ## Implementation
 
@@ -63,9 +67,9 @@ These scripts are not intended to handle examples such as a title using upper-ca
 ## Tracking
 
 * Package: change-case
-* Version: 2.0.1
+* Version: 2.1.0
 * Created: 2017-05-16
-* Updated: 2018-02-27
+* Updated: 2018-05-25
 * License: GPL
 * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 

@@ -4,13 +4,11 @@
 #
 # Examples:
 #
-#   ```shell
-#   $ echo "FooGooHoo" | chain-case
-#   foo-goo-hoo
+#     $ echo "FooGooHoo" | chain-case
+#     foo-goo-hoo
 #
-#   $ echo "foo_goo_hoo" | chain-case
-#   foo-goo-hoo
-#   ```
+#     $ echo "foo_goo_hoo" | chain-case
+#     foo-goo-hoo
 #
 # The script does this:
 #

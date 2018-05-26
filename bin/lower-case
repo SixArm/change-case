@@ -1,2 +1,11 @@
+#!/bin/sh
+#
+# lower-case: downcase the text.
+#
+# Example:
+#
+#     $ echo "Foo Goo" | lower-case
+#     foo goo
+#
 perl -pe '$_ = lc'
 

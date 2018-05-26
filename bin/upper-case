@@ -1,2 +1,11 @@
+#!/bin/sh
+#
+# upper-case: upcase the text.
+#
+# Example:
+#
+#     $ echo "Foo Goo" | lower-case
+#     FOO GOO
+#
 perl -pe '$_ = uc'
 
