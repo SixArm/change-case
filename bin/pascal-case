@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# pascal-case: change the case of each word to use Pascal format.
+#
+# Examples:
+#
+#     $ echo "foo-goo-hoo" | pascal-case
+#     FooGooHoo
+#
+#     $ echo "foo_goo_hoo" | pascal-case
+#     FooGooHoo
+#
+# The script does this:
+#
+#   * A separator is one or more dashes and/or underscores.
+#
+#   * Find each separator.
+#
+#   * Convert the character after the separator to upper-case.
+#
+perl -pe 's/^(.)/\U$1/;s/(.)[_-]+(.)/$1\U$2/g'

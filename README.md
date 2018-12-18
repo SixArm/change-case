@@ -18,6 +18,7 @@ Commands in this repo:
   * [lower-case](bin/lower-case)
   * [title-case](bin/title-case)
   * [camel-case](bin/camel-case)
+  * [pascal-case](bin/pascal-case)
   * [snake-case](bin/snake-case)
   * [chain-case](bin/chain-case)
   * [token-case](bin/token-case)
@@ -40,6 +41,9 @@ Examples of each command:
 
   $ echo "foo-bar" | camel-case
   fooBar
+
+  $ echo "foo-bar" | pascal-case
+  FooBar
 
   $ echo "fooBar gooCar" | snake-case
   foo_bar goo_car
@@ -67,9 +71,8 @@ These scripts are not intended to handle examples such as a title using upper-ca
 ## Tracking
 
 * Package: change-case
-* Version: 2.1.0
+* Version: 2.2.0
 * Created: 2017-05-16
-* Updated: 2018-05-25
+* Updated: 2018-12-18
 * License: GPL
 * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
-
