@@ -5,10 +5,10 @@
 # Examples:
 #
 #     $ echo "foo-goo-hoo" | camel-case
-#     FooGooHoo
+#     fooGooHoo
 #
 #     $ echo "foo_goo_hoo" | camel-case
-#     FooGooHoo
+#     fooGooHoo
 #
 # The script does this:
 #
@@ -19,4 +19,3 @@
 #   * Convert the character after the separator to upper-case.
 #
 perl -pe 's/(.)[_-]+(.)/$1\U$2/g'
-
