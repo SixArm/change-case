@@ -32,28 +32,44 @@ Examples of each command:
 ```sh
 $ echo "foo BAR" | upper-case
 FOO BAR
+```
 
+```sh
 $ echo "foo BAR" | lower-case
 foo bar
- 
+```
+
+```sh
 $ echo "foo BAR" | title-case
 Foo Bar
+```
 
+```sh
 $ echo "foo-bar" | camel-case
 fooBar
+```
 
+```sh
 $ echo "foo-bar" | pascal-case
 FooBar
+```
 
+```sh
 $ echo "fooBar gooCar" | snake-case
 foo_bar goo_car
+```
 
+```sh
 $ echo "fooBar" | chain-case
 foo-bar
+```
 
+```sh
 $ echo "Can't Stop Won't Stop" | token-case
 cant_stop_wont_stop
-  
+```
+
+```sh
 $ echo "Can't Stop Won't Stop" | slug-case
 cant-stop-wont-stop
 ```
