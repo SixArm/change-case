@@ -29,7 +29,7 @@ Commands in this repo:
 
 Examples of each command:
 
-```shell
+```sh
 $ echo "foo BAR" | upper-case
 FOO BAR
 
