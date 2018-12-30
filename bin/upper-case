@@ -4,8 +4,7 @@
 #
 # Example:
 #
-#     $ echo "Foo Goo" | lower-case
+#     $ echo "Foo Goo" | upper-case
 #     FOO GOO
 #
 perl -pe '$_ = uc'
-

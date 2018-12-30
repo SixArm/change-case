@@ -29,34 +29,34 @@ Commands in this repo:
 
 Examples of each command:
 
-  ```shell
-  $ echo "foo BAR" | upper-case
-  FOO BAR
+```shell
+$ echo "foo BAR" | upper-case
+FOO BAR
 
-  $ echo "foo BAR" | lower-case
-  foo bar
+$ echo "foo BAR" | lower-case
+foo bar
  
-  $ echo "foo BAR" | title-case
-  Foo Bar
+$ echo "foo BAR" | title-case
+Foo Bar
 
-  $ echo "foo-bar" | camel-case
-  fooBar
+$ echo "foo-bar" | camel-case
+fooBar
 
-  $ echo "foo-bar" | pascal-case
-  FooBar
+$ echo "foo-bar" | pascal-case
+FooBar
 
-  $ echo "fooBar gooCar" | snake-case
-  foo_bar goo_car
+$ echo "fooBar gooCar" | snake-case
+foo_bar goo_car
 
-  $ echo "fooBar" | chain-case
-  foo-bar
+$ echo "fooBar" | chain-case
+foo-bar
 
-  $ echo "Can't Stop Won't Stop" | token-case
-  cant_stop_wont_stop
+$ echo "Can't Stop Won't Stop" | token-case
+cant_stop_wont_stop
   
-  $ echo "Can't Stop Won't Stop" | slug-case
-  cant-stop-wont-stop
-  ```
+$ echo "Can't Stop Won't Stop" | slug-case
+cant-stop-wont-stop
+```
 
  
 ## Implementation
@@ -71,8 +71,11 @@ These scripts are not intended to handle examples such as a title using upper-ca
 ## Tracking
 
 * Package: change-case
+* Website: http://sixarm.com/change-case
+* Cloning: https://github.com/sixarm/change-case
 * Version: 2.2.0
 * Created: 2017-05-16
 * Updated: 2018-12-18
 * License: GPL
 * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
+* Tracker: 760a85cee2b838f3297f5a5b2bfd9996
