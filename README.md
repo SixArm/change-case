@@ -45,23 +45,23 @@ Foo Bar
 ```
 
 ```sh
-$ echo "foo-bar" | camel-case
-fooBar
+$ echo "foo-goo-hoo" | camel-case
+fooGooHoo
 ```
 
 ```sh
-$ echo "foo-bar" | pascal-case
-FooBar
+$ echo "foo-goo-hoo" | pascal-case
+FooBarHoo
 ```
 
 ```sh
-$ echo "fooBar gooCar" | snake-case
-foo_bar goo_car
+$ echo "foo-goo-hoo" | snake-case
+foo_goo_hoo
 ```
 
 ```sh
-$ echo "fooBar" | chain-case
-foo-bar
+$ echo "fooGooHoo" | chain-case
+foo-goo-hoo
 ```
 
 ```sh
@@ -89,9 +89,9 @@ These scripts are not intended to handle examples such as a title using upper-ca
 * Package: change-case
 * Website: http://sixarm.com/change-case
 * Cloning: https://github.com/sixarm/change-case
-* Version: 2.2.0
+* Version: 2.2.1
 * Created: 2017-05-16
-* Updated: 2018-12-18
+* Updated: 2019-02-03
 * License: GPL
 * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 * Tracker: 760a85cee2b838f3297f5a5b2bfd9996
