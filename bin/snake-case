@@ -1,1 +1,22 @@
-perl -pe 's/([a-z0-9])([A-Z])/$1_\L$2/g'
+#!/bin/sh
+#
+# snake-case: change each word to use snake-case format.
+#
+# Examples:
+#
+#     $ echo "FooGooHoo" | snake-case
+#     foo_goo_hoo
+#
+#     $ echo "foo-goo-hoo" | snake-case
+#     foo_goo_hoo
+#
+# The script does this:
+#
+#   * Insert a low line character between any lower case character
+#     followed by an upper case character.
+#
+#   * Translate any dash character to a low line character.
+#
+#   * Change case to lower case.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/([a-z0-9])([A-Z])/\$1_\$2/g; s/-/_/g; \$_=lc(\$_)"

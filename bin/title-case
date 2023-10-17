@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# title-case: change the case of each word to use title format.
+# title-case: change each word to use title-case format.
 #
 # Example:
 #
@@ -11,9 +11,4 @@
 #
 #   * Convert the first letter of each word to upper-case.
 #
-#   * Convert all other letters to lower-case.
-#
-#   * A word is defined by the perl `\w` regexp.
-#
-perl -pe 's/(\w)(\w*)/\U\1\L\2/g'
-
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/(\b)(\w)/\U\2/g"

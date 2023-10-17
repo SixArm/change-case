@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# word-case: change the text to one word, and the separator is a low line.
+#
+# Example:
+#
+#     $ echo "Foo Goo Hoo" | word-case
+#     Foo_Goo_Hoo
+#
+#     $ echo "Can't Stop Won't Stop" | word-case
+#     Cant_Stop_Wont_Stop
+#
+# The script does this:
+#
+#   * Delete any quotation mark.
+#
+#   * Translate any non-alphanumeric to a separator i.e. low line.
+#
+#   * Flatten any separator run.
+# 
+#   * Trim any leading/trailing separator.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Quotation_Mark}//g; s/[^[:alnum:]]/_/g; s/__+/_/g; s/^-+//; s/_+$//; \$_=lc(\$_)"

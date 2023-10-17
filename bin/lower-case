@@ -4,7 +4,11 @@
 #
 # Example:
 #
-#     $ echo "Foo Goo" | lower-case
-#     foo goo
+#     $ echo "Foo Goo Hoo" | lower-case
+#     foo goo hoo
 #
-perl -pe '$_ = lc'
+# The script does this:
+#
+#   * Change case to lower case.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; \$_ = lc"

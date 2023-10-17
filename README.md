@@ -4,10 +4,10 @@ Change the case of text on the command line.
 
 Contents:
 
-* [Commands](#commands)
-* [Examples](#examples)
-* [Implementation](#implementation)
-* [Tracking](#tracking)
+- [Commands](#commands)
+- [Examples](#examples)
+- [Implementation](#implementation)
+- [Tracking](#tracking)
 
 
 ## Commands
@@ -19,10 +19,10 @@ Commands in this repo:
   * [title-case](bin/title-case)
   * [camel-case](bin/camel-case)
   * [pascal-case](bin/pascal-case)
+  * [kebab-case](bin/kebab-case)
   * [snake-case](bin/snake-case)
-  * [chain-case](bin/chain-case)
-  * [token-case](bin/token-case)
   * [slug-case](bin/slug-case)
+  * [word-case](bin/word-case)
 
 
 ## Examples
@@ -55,18 +55,13 @@ FooBarHoo
 ```
 
 ```sh
-$ echo "foo-goo-hoo" | snake-case
-foo_goo_hoo
-```
-
-```sh
-$ echo "fooGooHoo" | chain-case
+$ echo "fooGooHoo" | kebab-case
 foo-goo-hoo
 ```
 
 ```sh
-$ echo "Can't Stop Won't Stop" | token-case
-cant_stop_wont_stop
+$ echo "fooGooHoo" | snake-case
+foo_goo_hoo
 ```
 
 ```sh
@@ -74,6 +69,10 @@ $ echo "Can't Stop Won't Stop" | slug-case
 cant-stop-wont-stop
 ```
 
+```sh
+$ echo "Can't Stop Won't Stop" | word-case
+Cant_Stop_Wont_Stop
+```
  
 ## Implementation
 
@@ -89,9 +88,9 @@ These scripts are not intended to handle examples such as a title using upper-ca
 * Package: change-case
 * Website: http://sixarm.com/change-case
 * Cloning: https://github.com/sixarm/change-case
-* Version: 2.2.1
+* Version: 3.0.0
 * Created: 2017-05-16
-* Updated: 2019-02-03
-* License: GPL
+* Updated: 2023-10-17T05:56:08Z
+* License: GPL-2.0 or GPL-3.0 or contact us for custom
 * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 * Tracker: 760a85cee2b838f3297f5a5b2bfd9996

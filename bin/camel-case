@@ -1,21 +1,21 @@
 #!/bin/sh
 #
-# camel-case: change the case of each word to use camel format.
+# camel-case: change each word to use camel-case format.
 #
 # Examples:
 #
 #     $ echo "foo-goo-hoo" | camel-case
 #     fooGooHoo
 #
-#     $ echo "foo_goo_hoo" | camel-case
-#     fooGooHoo
+#     $ echo "alpha@bravo charlie&delta echo*foxtrot" | camel-case
+#     alphaBravo charlieDelta echoFoxtrot
 #
 # The script does this:
 #
-#   * A separator is one or more dashes and/or underscores.
+#   * Find each separator i.e. any punctuation character run.
 #
-#   * Find each separator.
+#   * Delete the separator.
 #
 #   * Convert the character after the separator to upper-case.
 #
-perl -pe 's/(.)[_-]+(.)/$1\U$2/g'
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Punct}+(\w)/\U\1/g;"

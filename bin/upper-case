@@ -4,7 +4,7 @@
 #
 # Example:
 #
-#     $ echo "Foo Goo" | upper-case
-#     FOO GOO
+#     $ echo "Foo Goo Hoo" | upper-case
+#     FOO GOO HOO
 #
-perl -pe '$_ = uc'
+perl -pe "use open ':std', ':encoding(UTF-8)'; \$_ = uc"

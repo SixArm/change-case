@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# kebab-case: change each word to use kebab-case format.
+#
+# Examples:
+#
+#     $ echo "FooGooHoo" | kebab-case
+#     foo-goo-hoo
+#
+#     $ echo "AlphaBravo CharlieDelta EchoFoxtrot" | kebab-case
+#     alpha-bravo charlie-delta echo-foxtrot
+#
+# The script does this:
+#
+#   * Find each transition i.e. lower-case alphanumeric then upper-case alphabetic.
+#
+#   * Split the transition by inserting a separator i.e. hyphen-minus.
+#
+#   * Translate any punctuation run to a separator.
+#
+#   * Change case to lower case.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/([[:lower:][:digit:]])([[:upper:]])/\1-\2/g; s/\p{Punct}+/-/g; \$_=lc(\$_)"

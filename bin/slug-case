@@ -1,13 +1,10 @@
 #!/bin/sh
 #
-# slug-case: change the case of each word to use slug format.
+# slug-case: change the text to be one slug, and the separator is a hyphen-minus.
 #
 # Examples:
 #
-#     $ echo "FooGooHoo" | slug-case
-#     foogoohoo
-#
-#     $ echo "foo_goo_hoo" | slug-case
+#     $ echo "Foo Goo Hoo" | slug-case
 #     foo-goo-hoo
 #
 #     $ echo "Can't Stop Won't Stop" | slug-case
@@ -15,14 +12,14 @@
 #
 # The script does this:
 #
-#   * Delete any contraction quote a.k.a. apostrophe.
+#   * Delete any quotation mark.
 #
-#   * Translate any non-alphanumeric to a dash.
+#   * Translate any non-alphanumeric to a separator i.e. hyphen-minus.
 #
-#   * Ensure only one dash in a row.
+#   * Flatten any separator run.
 # 
-#   * Trim any leading/trailing dash.
+#   * Trim any leading/trailing separator.
 #
 #   * Change case to lower case.
 #
-perl -pe "s/['’]//g; s/[^[:alnum:]]/-/g; s/--+/-/g; s/^-+//; s/-+$//; \$_=lc(\$_)"
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Quotation_Mark}//g; s/[^[:alnum:]]/-/g; s/--+/-/g; s/^-+//; s/-+$//; \$_=lc(\$_)"
