@@ -7,15 +7,24 @@
 #     $ echo "foo-goo-hoo" | pascal-case
 #     FooGooHoo
 #
-#     $ echo "foo_goo_hoo" | pascal-case
-#     FooGooHoo
+#     $ echo "alpha@bravo charlie&delta echo*foxtrot" | pascal-case
+#     AlphaBravo CharlieDelta EchoFoxtrot
 #
 # The script does this:
 #
-#   * A separator is one or more dashes and/or low lines.
+#   * Find each separator i.e. any punctuation character run.
 #
-#   * Find each separator.
+#   * Delete the separator.
 #
-#   * Delete the separator, and convert the character after the separator to upper-case.
+#   * Convert the character after the separator to upper-case.
 #
-perl -pe "use open ':std', ':encoding(UTF-8)'; s/^(.)/\U\$1/;s/(.)[_-]+(.)/\$1\U\$2/g"
+#   * Convert each word's first alphanumeric character to upper-case.
+#
+# Note that pascal-case and camel-case are identical, except for each word's
+# first alphanumeric character:
+#
+#   * pascal-case converts it to upper-case.
+#
+#   * camel-case converts it to lower-case.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Punct}+([[:alnum:]])/\U\1/g; s/\b([[:alnum:]])/\U\1/g"

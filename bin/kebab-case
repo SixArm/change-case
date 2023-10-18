@@ -12,12 +12,20 @@
 #
 # The script does this:
 #
-#   * Find each transition i.e. lower-case alphanumeric then upper-case alphabetic.
+#   * Find each transition i.e. a lower-case alphanumeric character followed by
+#     an upper-case alphabetic character.
 #
 #   * Split the transition by inserting a separator i.e. hyphen-minus.
 #
 #   * Translate any punctuation run to a separator.
 #
 #   * Change case to lower case.
+#
+# Note that kebab-case and snake-case are intentionally identical, except for
+# the separator character:
+#
+#   * kebab-case uses a hypen-minus.
+#
+#   * snake-case uses a low line.
 #
 perl -pe "use open ':std', ':encoding(UTF-8)'; s/([[:lower:][:digit:]])([[:upper:]])/\1-\2/g; s/\p{Punct}+/-/g; \$_=lc(\$_)"

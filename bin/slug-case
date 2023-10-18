@@ -7,6 +7,9 @@
 #     $ echo "Foo Goo Hoo" | slug-case
 #     foo-goo-hoo
 #
+#     $ echo "Alpha@bravo Charlie&delta Echo*foxtrot" | slug-case
+#     alpha-bravo-charlie-delta-echo-foxtrot
+#
 #     $ echo "Can't Stop Won't Stop" | slug-case
 #     cant-stop-wont-stop
 #
@@ -22,4 +25,10 @@
 #
 #   * Change case to lower case.
 #
-perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Quotation_Mark}//g; s/[^[:alnum:]]/-/g; s/--+/-/g; s/^-+//; s/-+$//; \$_=lc(\$_)"
+# Note that slug-case and word-case are identical except:
+#
+#   * slug-case uses a hyphen-minus; word-case uses a low line.
+#
+#   * slug-case coverts to lower-case; word-case preserves capitalization.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Quotation_Mark}//g; s/[^[:alnum:]]/-/g; s/--+/-/g; s/^-//; s/-$//; \$_=lc(\$_)"

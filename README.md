@@ -30,18 +30,18 @@ Commands in this repo:
 Examples of each command:
 
 ```sh
-$ echo "foo BAR" | upper-case
-FOO BAR
+$ echo "foo goo hoo" | upper-case
+FOO GOO HOO
 ```
 
 ```sh
-$ echo "foo BAR" | lower-case
-foo bar
+$ echo "FOO GOO HOO" | lower-case
+foo goo hoo
 ```
 
 ```sh
-$ echo "foo BAR" | title-case
-Foo Bar
+$ echo "foo goo hoo" | title-case
+Foo Goo Hoo
 ```
 
 ```sh
@@ -51,7 +51,7 @@ fooGooHoo
 
 ```sh
 $ echo "foo-goo-hoo" | pascal-case
-FooBarHoo
+FooGooHoo
 ```
 
 ```sh
@@ -88,7 +88,7 @@ These scripts are not intended to handle examples such as a title using upper-ca
 * Package: change-case
 * Website: http://sixarm.com/change-case
 * Cloning: https://github.com/sixarm/change-case
-* Version: 3.0.0
+* Version: 3.1.0
 * Created: 2017-05-16
 * Updated: 2023-10-17T05:56:08Z
 * License: GPL-2.0 or GPL-3.0 or contact us for custom

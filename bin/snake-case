@@ -7,16 +7,25 @@
 #     $ echo "FooGooHoo" | snake-case
 #     foo_goo_hoo
 #
-#     $ echo "foo-goo-hoo" | snake-case
-#     foo_goo_hoo
+#     $ echo "AlphaBravo CharlieDelta EchoFoxtrot" | snake-case
+#     alpha_bravo charlie_delta echo_foxtrot
 #
 # The script does this:
 #
-#   * Insert a low line character between any lower case character
-#     followed by an upper case character.
+#   * Find each transition i.e. a lower-case alphanumeric character followed by
+#     an upper-case alphabetic character.
 #
-#   * Translate any dash character to a low line character.
+#   * Split the transition by inserting a separator i.e. low line.
+#
+#   * Translate any punctuation run to a separator.
 #
 #   * Change case to lower case.
 #
-perl -pe "use open ':std', ':encoding(UTF-8)'; s/([a-z0-9])([A-Z])/\$1_\$2/g; s/-/_/g; \$_=lc(\$_)"
+# Note that snake-case and kebab-case are intentionally identical, except for
+# the separator:
+#
+#   * snake-case uses a low line.
+#
+#   * kebab-case uses a hypen-minus.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/([[:lower:][:digit:]])([[:upper:]])/\1_\2/g; s/\p{Punct}+/_/g; \$_=lc(\$_)"

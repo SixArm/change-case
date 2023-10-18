@@ -7,7 +7,7 @@
 #     $ echo "foo-goo-hoo" | camel-case
 #     fooGooHoo
 #
-#     $ echo "alpha@bravo charlie&delta echo*foxtrot" | camel-case
+#     $ echo "Alpha@bravo Charlie&delta Echo*foxtrot" | camel-case
 #     alphaBravo charlieDelta echoFoxtrot
 #
 # The script does this:
@@ -18,4 +18,13 @@
 #
 #   * Convert the character after the separator to upper-case.
 #
-perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Punct}+(\w)/\U\1/g;"
+#   * Convert each word's first alphanumeric character to upper-case.
+#
+# Note that camel-case and pascal-case are identical, except for each word's
+# first alphanumeric character:
+#
+#   * camel-case converts it to lower-case.
+#
+#   * pascal-case converts it to upper-case.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Punct}+([[:alnum:]])/\U\1/g; s/\b([[:alnum:]])/\L\1/g"

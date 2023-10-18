@@ -20,4 +20,10 @@
 # 
 #   * Trim any leading/trailing separator.
 #
-perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Quotation_Mark}//g; s/[^[:alnum:]]/_/g; s/__+/_/g; s/^-+//; s/_+$//; \$_=lc(\$_)"
+# Note that word-case and slug-case are identical except:
+#
+#   * word-case uses a low line; slug-case uses a hyphen-minus.
+#
+#   * word-case preserves capitalization; slug-case coverts to lower-case.
+#
+perl -pe "use open ':std', ':encoding(UTF-8)'; s/\p{Quotation_Mark}//g; s/[^[:alnum:]]/_/g; s/__+/_/g; s/^_//; s/_$//"
